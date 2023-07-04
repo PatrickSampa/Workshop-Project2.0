@@ -1,4 +1,4 @@
-# Electron - Fichero Bibliotecario
+# Electron -Oficna
 
 1.- Clona el repositorio.
 
@@ -21,12 +21,3 @@ npm run start
 
 Usuarios:
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/43613125/181368270-ab547545-33e7-48ec-b1d8-21a6dc4a32f4.png">
-</p>
-
-![image](https://user-images.githubusercontent.com/43613125/181367847-6e3934bf-e2ec-4cfc-9cdc-932b5cfaa855.png)
-
-![image](https://user-images.githubusercontent.com/43613125/181367910-ce471935-1067-4b53-b3df-47b1fd894b6d.png)
-
-![image](https://user-images.githubusercontent.com/43613125/181367794-ecdc6d22-23c0-4a6c-9b67-45ad75ea733a.png)
