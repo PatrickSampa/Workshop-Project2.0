@@ -1,6 +1,6 @@
-const updateBook = (ISBN) => {
+const Inspecionar = (ISBN) => {
+    console.log(ISBN)
     window.ipcRender.send('consultBook', ISBN);
-
     location.href = './form-modificar.html';
 }
 
@@ -19,7 +19,7 @@ const mostrarLibros = (libros) => {
                 <td>${libros[i].editorial}</td>
                 <td>${libros[i].carrera}</td>
                 <td>${libros[i].ubicacion}</td>
-                <td class="text-center"><button type="button" class="btn btn-success" onclick="updateBook('${libros[i].isbn}')">Inspecionar</button></td>
+                <td class="text-center"><button type="button" class="btn btn-success" onclick="Inspecionar('${libros[i].isbn}')">Inspecionar</button></td>
             </tr>
         `;
     }

@@ -5,6 +5,7 @@ const Store = require('electron-store');
 const store = new Store();
 const path = require('path');
 const db = require('./connection.js');
+const { get } = require('http');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -168,23 +169,33 @@ electronIpcMain.handle('getUserData', (event) => {
 });
 
 electronIpcMain.on('consultBook', (event, ISBN) => {
-  const sql = 'SELECT * FROM libros WHERE ISBN=?';
-
-  db.query(sql, ISBN, (error, results) => {
+  const sql = 'SELECT * FROM clientes WHERE cpf=?';
+  console.log("LENDO CPF: " + ISBN)
+  let novoCpfNumero = parseInt(ISBN)
+  db.query(sql, novoCpfNumero, (error, results) => {
     if (error) {
       console.log(error);
     }
-    store.set('isbnL', results[0].ISBN);
-    store.set('nombreL', results[0].nombre);
-    store.set('carreraL', results[0].carrera);
-    store.set('ubicacionL', results[0].ubicacion);
-    store.set('editorialL', results[0].editorial);
+    store.set('isbnL', results[0].cpf);
+    store.set('nombreL', results[0].nome);
+    store.set('carreraL', results[0].data_nascimento);
+    store.set('ubicacionL', results[0].email);
+    store.set('editorialL', results[0].numero_telefone);
+    store.set('rg', results[0].rg);
+    store.set('cidade', results[0].cidade);
+    store.set('bairro', results[0].bairro);
+    store.set('rua', results[0].rua);
+    store.set('casa', results[0].casa);
+    store.set('referencia', results[0].referencia);
+    store.set('observacao', results[0].observacao);
+    store.set('datacricao', results[0].datacricao);
   });
 });
 
 electronIpcMain.handle('getBook', (event) => {
-  const data = { isbn: store.get('isbnL'), nombre: store.get('nombreL'), carrera: store.get('carreraL'), ubicacion: store.get('ubicacionL'), editorial: store.get('editorialL') };
-
+  const data = { isbn: store.get('isbnL'), nombre: store.get('nombreL'), carrera: store.get('carreraL'), ubicacion: store.get('ubicacionL'), editorial: store.get('editorialL'), rg: store.get('rg'),
+cidade: store.get('cidade'), bairro: store.get('bairro'), rua: store.get('rua'), casa: store.get('casa'), referencia: store.get('referencia'), observacao: store.get('observacao'), datacriacao: store.get('datacricao') };
+console.log("DataAQUI: " + data)
   return data;
 });
 
@@ -214,7 +225,7 @@ electronIpcMain.handle('getBooks', (event) => {
   });
 
   const data = { isbn: store.get('isbn'), nombre: store.get('nombre'), carrera: store.get('carrera'), ubicacion: store.get('ubicacion'), editorial: store.get('editorial') };
-  console.log(data)
+  //console.log(data)
   return data;
 });
 
