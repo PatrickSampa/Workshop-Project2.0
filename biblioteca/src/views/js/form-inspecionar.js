@@ -1,17 +1,41 @@
-let txtISBN = document.querySelector('#txtISBN');
-let txtNombre = document.querySelector('#txtNombre');
-let selectCarrera = document.querySelector('#selectCarrera');
-let txtUbicacion = document.querySelector('#txtUbicacion');
-let txtEditorial = document.querySelector('#txtEditorial');
+    let nometxt = document.getElementById('txtNome');
+    let data_nascimentotxt = document.getElementById('txtDataNascimento');
+    let emailtxt = document.getElementById('txtEmail');
+    let telefonetxt = document.getElementById('txtTelefone');
+    let cpftxt = document.getElementById('txtCPF');
+    let rgtxt = document.getElementById('txtRg');
+    let cidadetxt = document.getElementById('txtCidade');
+    let bairrotxt = document.getElementById('txtBairro');
+    let ruatxt = document.getElementById('txtRua');
+    let casatxt = document.getElementById('txtCasa');
+    let referenciatxt = document.getElementById('txtReferencia');
+    let observacaotxt = document.getElementById('txtObservacao');
+    let datacriacaotxt = document.getElementById('txtDataCriacao');
+    let Retornarbutton = document.getElementById('Retornar');
+
+    Retornarbutton.addEventListener("click", function() {
+        // Código a ser executado quando o botão for clicado
+        location.href = './consultar.html';
+      });
+
 
 const loadBook = () => {
     window.ipcRender.invoke('getBook').then((result) => {
-        let { isbn, nombre, carrera, ubicacion, editorial,  } = result;
+        let { isbn, nombre, carrera, ubicacion, editorial, rg, cidade, bairro, rua, casa, referencia, observacao, datacriacao } = result;
 
-        txtISBN.value = isbn;
-        txtNombre.value = nombre;
-        txtUbicacion.value = ubicacion;
-        txtEditorial.value = editorial;
+        cpftxt.value = isbn;
+        nometxt.value = nombre;
+        data_nascimentotxt.value = carrera;
+        emailtxt.value = ubicacion;
+        telefonetxt.value = editorial;
+        rgtxt.value = rg;
+        cidadetxt.value = cidade
+        bairrotxt.value = bairro;
+        ruatxt.value = rua;
+        casatxt.value = casa;
+        referenciatxt.value = referencia;
+        observacaotxt.value = observacao;
+        datacriacaotxt.value = datacriacao;
 
         window.ipcRender.invoke('getCarreras').then((result) => {
             let { idCarrera, nombreCarrera } = result;

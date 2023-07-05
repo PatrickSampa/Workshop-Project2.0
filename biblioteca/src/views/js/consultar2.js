@@ -1,7 +1,7 @@
 const Inspecionar = (ISBN) => {
     console.log(ISBN)
     window.ipcRender.send('consultBook', ISBN);
-    location.href = './form-modificar.html';
+    location.href = './form-inspecionar.html';
 }
 
 const mostrarLibros = (libros) => {

@@ -44,7 +44,7 @@
         <div class="sidebar-body">
           <ul class="nav">
             <li class="nav-item nav-category">Libros</li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a href="consultar.html" class="nav-link">
                 <i class="link-icon" data-feather="book"></i>
                 <span class="link-title">Consultar Libros</span>
@@ -56,7 +56,7 @@
                 <span class="link-title">Agregar Libros</span>
               </a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
               <a href="modificar.html" class="nav-link">
                 <i class="link-icon" data-feather="edit"></i>
                 <span class="link-title">Modificar Libros</span>
@@ -162,7 +162,7 @@
                             >
                             <input
                               id="txtDataNascimento"
-                              type="date"
+                              type="text"
                               class="form-control"
                               disabled
                             />
@@ -329,9 +329,31 @@
                         </div>
                         <!-- Col -->
                       </div>
+
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="form-group">
+                            <label for="txtISBN" class="control-label"
+                              >Data criação conta</label
+                            >
+                            <input
+                              id="txtDataCriacao"
+                              type="text"
+                              class="form-control"
+                              placeholder="Casa"
+                              disabled
+                            />
+                          </div>
                       
                       <!-- Row -->
                     </form>
+                    <button
+                    id="Retornar"
+                    type="button"
+                    class="btn btn-primary submit"
+                  >
+                    Retornar
+                  </button>
                   </div>
                 </div>
               </div>
