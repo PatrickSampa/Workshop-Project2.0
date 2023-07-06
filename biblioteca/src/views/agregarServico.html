@@ -134,16 +134,16 @@
             <div class="col-md-12 stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h6 class="card-title">Cadastro de Clientes</h6>
+                  <h6 class="card-title">Inserir Novo Serviço</h6>
                   <form id="cadastrar">
                     <div class="row">
                       <div class="col-sm-4">
                         <div class="form-group">
                           <label for="txtISBN" class="control-label"
-                            >Nome Completo</label
+                            >CPF CLIENTE</label
                           >
                           <input
-                            id="txtNome"
+                            id="txtcpf"
                             type="text"
                             class="form-control"
                             placeholder="Nome Completo"
@@ -155,10 +155,10 @@
                       <div class="col-sm-4">
                         <div class="form-group">
                           <label for="txtNombre" class="control-label"
-                            >Data de Nascimento</label
+                            >Entrada</label
                           >
                           <input
-                            id="txtDataNascimento"
+                            id="txtEntrada"
                             type="date"
                             class="form-control"
                           />
@@ -167,11 +167,11 @@
                       <div class="col-sm-4">
                         <div class="form-group">
                           <label for="txtNombre" class="control-label"
-                            >Email</label
+                            >Saída</label
                           >
                           <input
-                            id="txtEmail"
-                            type="email"
+                            id="txtSaida"
+                            type="date"
                             class="form-control"
                             placeholder="Email"
                           />
@@ -185,10 +185,10 @@
                       <div class="col-sm-4">
                         <div class="form-group">
                           <label for="txtEditorial" class="control-label"
-                            >Número Telefone</label
+                            >MODELO</label
                           >
                           <input
-                            id="txtTelefone"
+                            id="txtModelo"
                             type="tel"
                             class="form-control"
                             placeholder="Numero Telefone"
@@ -199,10 +199,10 @@
                       <div class="col-sm-4">
                         <div class="form-group">
                           <label for="selectCarrera" class="control-label"
-                            >CPF</label
+                            >Placa</label
                           >
                           <input
-                            id="txtCPF"
+                            id="txtPlaca"
                             class="form-control"
                             placeholder="CPF"
                             type="text"
@@ -215,10 +215,10 @@
                       <div class="col-sm-4">
                         <div class="form-group">
                           <label for="txtUbicacion" class="control-label"
-                            >RG</label
+                            >KM</label
                           >
                           <input
-                            id="txtRg"
+                            id="txtKm"
                             type="text"
                             class="form-control"
                             placeholder="RG"
@@ -229,82 +229,16 @@
                     </div>
                     <br>
                     <br>
-                    <h4 class="card-title">Endereço</h4>
                     <div class="row">
-                      <div class="col-sm-4">
-                        <div class="form-group">
-                          <label for="txtISBN" class="control-label"
-                            >Cidade</label
-                          >
-                          <input
-                            id="txtCidade"
-                            type="text"
-                            class="form-control"
-                            placeholder="Cidade"
-                          />
-                        </div>
-                      </div>
-                      <!-- Col -->
-                      <div class="col-sm-4">
-                        <div class="form-group">
-                          <label for="txtNombre" class="control-label"
-                            >Bairro</label
-                          >
-                          <input
-                            id="txtBairro"
-                            type="text"
-                            class="form-control"
-                            placeholder="Bairro"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="form-group">
-                          <label for="txtNombre" class="control-label"
-                            >Rua</label
-                          >
-                          <input
-                            id="txtRua"
-                            type="text"
-                            class="form-control"
-                            placeholder="Rua"
-                          />
-                        </div>
-                      </div>
+                      
                       <!-- Col -->
                     </div>
-                    <div class="row">
-                      <div class="col-sm-4">
-                        <div class="form-group">
-                          <label for="txtISBN" class="control-label"
-                            >Casa</label
-                          >
-                          <input
-                            id="txtCasa"
-                            type="text"
-                            class="form-control"
-                            placeholder="Casa"
-                          />
-                        </div>
-                      </div>
-                      <!-- Col -->
-                      <div class="col-sm-4">
+                    <div class="row" style="border: 1px solid #000; padding: 10px;">
+                      
+                      <div class="col-sm-1">
                         <div class="form-group">
                           <label for="txtNombre" class="control-label"
-                            >Referência</label
-                          >
-                          <input
-                            id="txtReferencia"
-                            type="text"
-                            class="form-control"
-                            placeholder="Referência"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="form-group">
-                          <label for="txtNombre" class="control-label"
-                            >Observação</label
+                            >Quantidade</label
                           >
                           <input
                             id="txtObservacao"
@@ -315,8 +249,48 @@
                         </div>
                       </div>
                       <!-- Col -->
+                      <div class="col-sm-1">
+                        <div class="form-group">
+                          <label for="txtNombre" class="control-label"
+                            >Discriminação</label
+                          >
+                          <input
+                            id="txtObservacao"
+                            type="text"
+                            class="form-control"
+                            placeholder="Observação"  
+                          />
+                        </div>
+                      </div>
+                      <div class="col-sm-1">
+                        <div class="form-group">
+                          <label for="txtNombre" class="control-label"
+                            >P.UNIT</label
+                          >
+                          <input
+                            id="txtObservacao"
+                            type="text"
+                            class="form-control"
+                            placeholder="Observação"  
+                          />
+                          
+                        </div>
+                      </div>
+                      <div class="col-sm-1">
+                        <div class="form-group">
+                          <label for="txtNombre" class="control-label"
+                            >TOTAL</label
+                          >
+                          <input
+                            id="txtObservacao"
+                            type="text"
+                            class="form-control"
+                            placeholder="Observação"  
+                          />
+                        </div>
+                      </div>
                     </div>
-                    
+                    <br>
                     <!-- Row -->
                     <button
                       id="CADASTRAR"
