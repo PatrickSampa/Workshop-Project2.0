@@ -24,7 +24,7 @@ botaoServico.addEventListener('submit', (e) => {
     let formaPagamento = formaPagamentotxt.value;
     let deslocamento = txtDeslocamentotxt.value;
     let desconto = descontotxt.value;
-    let total = totaltxt.value;
+    let totalValor = totaltxt.value;
 
 
     let quatidadetxt1 = document.getElementById('quatidade1');
@@ -235,7 +235,9 @@ botaoServico.addEventListener('submit', (e) => {
         , quantidade16: quantidade16, quantidade17: quantidade17, quantidade18: quantidade18, quantidade19: quantidade19, quantidade20: quantidade20, discriminacao1: discriminacao1, discriminacao2: discriminacao2
         , discriminacao3: discriminacao3, discriminacao4: discriminacao4, discriminacao5: discriminacao5, discriminacao6: discriminacao6, discriminacao7: discriminacao7, discriminacao8: discriminacao8, discriminacao9: discriminacao9, discriminacao10: discriminacao10
         , discriminacao11: discriminacao11, discriminacao12: discriminacao12, discriminacao13: discriminacao13, discriminacao14: discriminacao14, discriminacao15: discriminacao15, discriminacao16: discriminacao16, discriminacao17: discriminacao17
-        , discriminacao18: discriminacao18, discriminacao19: discriminacao19, discriminacao20: discriminacao20}
+        , discriminacao18: discriminacao18, discriminacao19: discriminacao19, discriminacao20: discriminacao20, PIUNIT1: PIUNIT1, PIUNIT2: PIUNIT2, PIUNIT3: PIUNIT3, PIUNIT4: PIUNIT4, PIUNIT5: PIUNIT5, PIUNIT6: PIUNIT6, PIUNIT7: PIUNIT7, PIUNIT8: PIUNIT8, PIUNIT9: PIUNIT9, PIUNIT10: PIUNIT10
+        , PIUNIT11: PIUNIT11, PIUNIT12: PIUNIT12, PIUNIT13: PIUNIT13, PIUNIT14: PIUNIT14, PIUNIT15: PIUNIT15, PIUNIT16: PIUNIT16, PIUNIT17: PIUNIT17, PIUNIT18: PIUNIT18, PIUNIT19: PIUNIT19, PIUNIT20: PIUNIT20, total1: total1, total2: total2, total3: total3, total4: total4, total5: total5, total6: total6
+        , total7: total7, total8: total8, total9: total9, total10: total10, total11: total11, total12: total12, total13: total13, total14: total14, total15: total15, total16: total16, total17: total17, total18: total18, total19: total19, total20: total20}
 
 
    /*  } */
