@@ -1,8 +1,8 @@
-let botaoServico = document.getElementById('inserirServico');
+let botaoServico = document.getElementById('cadastrar');
 
 
 console.log("teste")
-botaoServico.addEventListener('click', (e) => {
+botaoServico.addEventListener('submit', (e) => {
     e.preventDefault();
     let cpftxt = document.getElementById('txtcpf');
     let txtEntrada = document.getElementById('txtEntrada');
@@ -13,7 +13,19 @@ botaoServico.addEventListener('click', (e) => {
     let formaPagamentotxt = document.getElementById('formaPagamento')
     let txtDeslocamentotxt = document.getElementById('txtDeslocamento')
     let descontotxt = document.getElementById('descontotxt');
-    let total = document.getElementById('valorTotal');
+    let totaltxt = document.getElementById('valorTotal');
+
+    let cpf = cpftxt.value;
+    let entrada = txtEntrada.value;
+    let saida = txtSaida.value;
+    let modelo = txtModelo.value;
+    let placa = txtPlaca.value;
+    let km = txtKm.value;
+    let formaPagamento = formaPagamentotxt.value;
+    let deslocamento = txtDeslocamentotxt.value;
+    let desconto = descontotxt.value;
+    let total = totaltxt.value;
+
 
     let quatidadetxt1 = document.getElementById('quatidade1');
     let discriminacao1txt = document.getElementById('discriminacao1')
@@ -139,46 +151,92 @@ botaoServico.addEventListener('click', (e) => {
     let discriminacao13txt = document.getElementById('discriminacao13')
     let PUNITtxt13 = document.getElementById('P.UNIT13')
     let totaltxt13 = document.getElementById('total13')
+    
+
+    let quantidade13 = quatidadetxt13.value || "null";
+    let discriminacao13 = discriminacao13txt.value || "null";
+    let PIUNIT13 = PUNITtxt13.value || "null";
+    let total13 = totaltxt13.value || "null";
 
     let quatidadetxt14 = document.getElementById('quatidade14');
     let discriminacao14txt = document.getElementById('discriminacao14')
     let PUNITtxt14 = document.getElementById('P.UNIT14')
     let totaltxt14 = document.getElementById('total14')
 
+    let quantidade14 = quatidadetxt14.value || "null";
+    let discriminacao14 = discriminacao14txt.value || "null";
+    let PIUNIT14 = PUNITtxt14.value || "null";
+    let total14 = totaltxt14.value || "null";
+
     let quatidadetxt15 = document.getElementById('quatidade15');
     let discriminacao15txt = document.getElementById('discriminacao15')
     let PUNITtxt15 = document.getElementById('P.UNIT15')
     let totaltxt15 = document.getElementById('total15')
+
+    let quantidade15 = quatidadetxt15.value || "null";
+    let discriminacao15 = discriminacao15txt.value || "null";
+    let PIUNIT15 = PUNITtxt15.value || "null";
+    let total15 = totaltxt15.value || "null";
 
     let quatidadetxt16 = document.getElementById('quatidade16');
     let discriminacao16txt = document.getElementById('discriminacao16')
     let PUNITtxt16 = document.getElementById('P.UNIT16')
     let totaltxt16 = document.getElementById('total16')
 
+    let quantidade16 = quatidadetxt16.value || "null";
+    let discriminacao16 = discriminacao16txt.value || "null";
+    let PIUNIT16 = PUNITtxt16.value || "null";
+    let total16 = totaltxt16.value || "null";
+
     let quatidadetxt17 = document.getElementById('quatidade17');
     let discriminacao17txt = document.getElementById('discriminacao17')
     let PUNITtxt17 = document.getElementById('P.UNIT17')
     let totaltxt17 = document.getElementById('total17')
+
+    let quantidade17 = quatidadetxt17.value || "null";
+    let discriminacao17 = discriminacao17txt.value || "null";
+    let PIUNIT17 = PUNITtxt17.value || "null";
+    let total17 = totaltxt17.value || "null";
 
     let quatidadetxt18 = document.getElementById('quatidade18');
     let discriminacao18txt = document.getElementById('discriminacao18')
     let PUNITtxt18 = document.getElementById('P.UNIT18')
     let totaltxt18 = document.getElementById('total18')
 
+    let quantidade18 = quatidadetxt18.value || "null";
+    let discriminacao18 = discriminacao18txt.value || "null";
+    let PIUNIT18 = PUNITtxt18.value || "null";
+    let total18 = totaltxt18.value || "null";
+    
+
     let quatidadetxt19 = document.getElementById('quatidade19');
     let discriminacao19txt = document.getElementById('discriminacao19')
     let PUNITtxt19 = document.getElementById('P.UNIT19')
     let totaltxt19 = document.getElementById('total19')
+
+    let quantidade19 = quatidadetxt19.value || "null";
+    let discriminacao19 = discriminacao19txt.value || "null";
+    let PIUNIT19 = PUNITtxt19.value || "null";
+    let total19 = totaltxt19.value || "null";
 
     let quatidadetxt20 = document.getElementById('quatidade20');
     let discriminacao20txt = document.getElementById('discriminacao20')
     let PUNITtxt20 = document.getElementById('P.UNIT20')
     let totaltxt20 = document.getElementById('total20')
 
+    let quantidade20 = quatidadetxt20.value || "null";
+    let discriminacao20 = discriminacao20txt.value || "null";
+    let PIUNIT20 = PUNITtxt20.value || "null";
+    let total20 = totaltxt20.value || "null";
 
 
+    data = {cpf: cpf, entrada: entrada, saida: saida, placa: placa, KM: km, modelo: modelo, quantidade1: quantidade1, quantidade2: quantidade2, quantidade3: quantidade3, quantidade4: quantidade4, quantidade5: quantidade5, quantidade6: quantidade6
+        , quantidade7: quantidade7, quantidade8: quantidade8, quantidade9: quantidade9, quantidade10: quantidade10, quantidade11: quantidade11, quantidade12: quantidade12, quantidade13: quantidade13, quantidade14: quantidade14, quantidade15: quantidade15
+        , quantidade16: quantidade16, quantidade17: quantidade17, quantidade18: quantidade18, quantidade19: quantidade19, quantidade20: quantidade20, discriminacao1: discriminacao1, discriminacao2: discriminacao2
+        , discriminacao3: discriminacao3, discriminacao4: discriminacao4, discriminacao5: discriminacao5, discriminacao6: discriminacao6, discriminacao7: discriminacao7, discriminacao8: discriminacao8, discriminacao9: discriminacao9, discriminacao10: discriminacao10
+        , discriminacao11: discriminacao11, discriminacao12: discriminacao12, discriminacao13: discriminacao13, discriminacao14: discriminacao14, discriminacao15: discriminacao15, discriminacao16: discriminacao16, discriminacao17: discriminacao17
+        , discriminacao18: discriminacao18, discriminacao19: discriminacao19, discriminacao20: discriminacao20}
 
-    let cpf = cpftxt.value;
-    console.log(cpf)
+
    /*  } */
 });
