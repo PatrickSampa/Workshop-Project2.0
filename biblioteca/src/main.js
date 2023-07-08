@@ -229,6 +229,51 @@ electronIpcMain.handle('getBooks', (event) => {
   return data;
 });
 
+
+
+electronIpcMain.handle('getServicos', (event) => {
+  let cpf = '', placa = '', modelo = '', saida = '',  valor_total= '';
+
+  db.query('SELECT * FROM servicos', (error, results, fields) => {
+    if (error) {
+      console.log(error);
+    }
+
+    if (results.length > 0) {
+      for (let i = 0; i < results.length; i++) {
+        cpf += results[i].cpf + '_';
+        placa += results[i].placa + '_';
+        modelo += results[i].modelo + '_';
+        saida += results[i].saida + '_';
+        valor_total += results[i].valor_total + '_';
+      }
+      console.log(cpf)
+      console.log(placa)
+      console.log(modelo)
+      console.log(saida)
+      console.log(valor_total)
+      store.set('cpf', cpf);
+      store.set('placa', placa);
+      store.set('modelo', modelo);
+      store.set('saida', saida);
+      store.set('valor_total', valor_total);
+    }
+  });
+
+  const data = { isbn: store.get('cpf'), nombre: store.get('placa'), carrera: store.get('saida'), ubicacion: store.get('valor_total'), editorial: store.get('modelo')};
+  //console.log(data)
+  return data;
+});
+
+
+
+
+
+
+
+
+
+
 electronIpcMain.handle('confirmAddBook', (event) => {
   return store.get('confirmAdd');
 });
@@ -250,6 +295,53 @@ function addDB(data) {
     }
   });
 }
+
+electronIpcMain.on('addService', (event, data) => {
+  console.log("PASSOUuuuuuuuu")
+  addService(data);
+});
+
+function addService(data){
+  const {cpf, entrada, saida, placa, KM, modelo, quantidade1, quantidade2, quantidade3, quantidade4, quantidade5, quantidade6
+    , quantidade7, quantidade8, quantidade9, quantidade10, quantidade11, quantidade12, quantidade13, quantidade14, quantidade15
+    , quantidade16, quantidade17, quantidade18, quantidade19, quantidade20, discriminacao1, discriminacao2
+    , discriminacao3, discriminacao4, discriminacao5, discriminacao6, discriminacao7, discriminacao8, discriminacao9, discriminacao10
+    , discriminacao11, discriminacao12, discriminacao13, discriminacao14, discriminacao15, discriminacao16, discriminacao17
+    , discriminacao18, discriminacao19, discriminacao20, punit1, punit2, punit3, punit4, punit5, punit6, punit7, punit8, punit9, punit10
+    , punit11, punit12, punit13, punit14, punit15, punit16, punit17, punit18, punit19, punit20, total1, total2, total3, total4, total5, total6
+    , total7, total8, total9, total10, total11, total12, total13, total14, total15, total16, total17, total18, total19, total20, taxa_deslocamento, valor_total, valor_com_desconto, forma_pagamento} = data;
+    const sql = `INSERT INTO servicos (cpf, entrada, saida, placa, KM, modelo, quantidade1, quantidade2, quantidade3, quantidade4, quantidade5,
+      quantidade6, quantidade7, quantidade8, quantidade9, quantidade10, quantidade11, quantidade12, quantidade13, quantidade14, quantidade15,
+      quantidade16, quantidade17, quantidade18, quantidade19, quantidade20, discriminacao1, discriminacao2, discriminacao3, discriminacao4,
+      discriminacao5, discriminacao6, discriminacao7, discriminacao8, discriminacao9, discriminacao10, discriminacao11, discriminacao12,
+      discriminacao13, discriminacao14, discriminacao15, discriminacao16, discriminacao17, discriminacao18, discriminacao19, discriminacao20,
+      punit1, punit2, punit3, punit4, punit5, punit6, punit7, punit8, punit9, punit10, punit11, punit12, punit13, punit14, punit15, punit16,
+      punit17, punit18, punit19, punit20, total1, total2, total3, total4, total5, total6, total7, total8, total9, total10, total11, total12,
+      total13, total14, total15, total16, total17, total18, total19, total20, taxa_deslocamento, valor_total, valor_com_desconto, forma_pagamento)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+      ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+    
+      db.query(sql, [cpf, entrada, saida, placa, KM, modelo, quantidade1, quantidade2, quantidade3, quantidade4, quantidade5, quantidade6
+        , quantidade7, quantidade8, quantidade9, quantidade10, quantidade11, quantidade12, quantidade13, quantidade14, quantidade15
+        , quantidade16, quantidade17, quantidade18, quantidade19, quantidade20, discriminacao1, discriminacao2
+        , discriminacao3, discriminacao4, discriminacao5, discriminacao6, discriminacao7, discriminacao8, discriminacao9, discriminacao10
+        , discriminacao11, discriminacao12, discriminacao13, discriminacao14, discriminacao15, discriminacao16, discriminacao17
+        , discriminacao18, discriminacao19, discriminacao20, punit1, punit2, punit3, punit4, punit5, punit6, punit7, punit8, punit9, punit10
+        , punit11, punit12, punit13, punit14, punit15, punit16, punit17, punit18, punit19, punit20, total1, total2, total3, total4, total5, total6
+        , total7, total8, total9, total10, total11, total12, total13, total14, total15, total16, total17, total18, total19, total20, taxa_deslocamento, valor_total, valor_com_desconto, forma_pagamento], (error) => {
+          if(error){
+            console.log(error)
+          }else{
+            console.log("PASSOU PORRA")
+          }
+        })
+}
+
+
+
+
+
+
 
 electronIpcMain.handle('confirmUpdateBook', (event) => {
   return store.get('confirmUpdate');

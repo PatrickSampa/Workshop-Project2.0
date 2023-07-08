@@ -11,7 +11,8 @@ const ipc = {
             'updateBook',
             'deleteBook',
             'consultBook',
-            'consultCarreras'
+            'consultCarreras',
+            'addService'
         ],
         'sendReceive': [
             'getCarreras',
@@ -20,7 +21,8 @@ const ipc = {
             'getBook',
             'confirmAddBook',
             'confirmUpdateBook',
-            'confirmDeleteBook'
+            'confirmDeleteBook',
+            'getServicos'
         ]
     }
 };
