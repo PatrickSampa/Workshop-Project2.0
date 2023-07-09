@@ -1,3 +1,8 @@
+
+
+
+
+
 const Inspecionar = (ISBN) => {
     console.log(ISBN)
     window.ipcRender.send('consultBook', ISBN);
@@ -26,6 +31,8 @@ const mostrarLibros = (libros) => {
 
     TablaLibros.innerHTML = texto;
 }
+
+    
 
 const consultBooks = () => {
     window.ipcRender.invoke('getBooks').then((result) => {

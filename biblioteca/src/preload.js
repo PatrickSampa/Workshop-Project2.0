@@ -11,6 +11,7 @@ const ipc = {
             'updateBook',
             'deleteBook',
             'consultBook',
+            'consultarServico',
             'consultCarreras',
             'addService'
         ],
@@ -19,6 +20,7 @@ const ipc = {
             'getUserData',
             'getBooks',
             'getBook',
+            'getServico',
             'confirmAddBook',
             'confirmUpdateBook',
             'confirmDeleteBook',
