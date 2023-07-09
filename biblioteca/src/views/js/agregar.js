@@ -49,6 +49,7 @@ CadastrarUser.addEventListener('submit', (e) => {
 
 const addBook = (data) => {
     window.ipcRender.send('addBook', data);
+    window.ipcRender.invoke('getBooks')
     //localStorage.setItem('reload', '1');
     //location.reload(); 
 }

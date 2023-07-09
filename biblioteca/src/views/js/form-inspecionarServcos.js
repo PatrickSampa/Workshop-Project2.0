@@ -343,3 +343,14 @@ const formSubmit = (event) => {
 event.preventDefault();
 return false;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    window.ipcRender.invoke('getServicos')
+  });
+
+  let Retornarbutton = document.getElementById('Retornar');
+
+    Retornarbutton.addEventListener("click", function() {
+        // Código a ser executado quando o botão for clicado
+        location.href = './consultarServicos.html';
+      });
