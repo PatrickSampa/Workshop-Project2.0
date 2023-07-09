@@ -240,6 +240,7 @@ botaoServico.addEventListener('submit', (e) => {
         , total7: total7, total8: total8, total9: total9, total10: total10, total11: total11, total12: total12, total13: total13, total14: total14, total15: total15, total16: total16, total17: total17, total18: total18, total19: total19, total20: total20, taxa_deslocamento: deslocamento, valor_total: totalValor, valor_com_desconto: desconto, forma_pagamento: formaPagamento}
 
         window.ipcRender.send('addService', data);
+        window.ipcRender.invoke('getServicos');
         console.log(data)
        
    /*  } */

@@ -16,9 +16,9 @@ const login = () => {
         const data = { email: usuario.value, senha: senha.value };
         console.log(data)
         window.ipcRender.send('login', data);
-        
+        window.ipcRender.invoke('getServicos');
 
-        setTimeout(errorLogin, 300);
+        setTimeout(errorLogin, 600);
     }
 }
 

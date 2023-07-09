@@ -406,10 +406,12 @@ electronIpcMain.handle('getServicos', (event) => {
       console.log("PASSOU PARA CONSULTAR SERVICOS")
       console.log(cpf)
       store.set('cpf', cpf);
+      console.log("Cpf: " + store.get('cpf'))
       store.set('placa', placa);
       store.set('modelo', modelo);
       store.set('saida', saida);
       store.set('valor_total', valor_total);
+      console.log("FINAL")
     }
   });
   console.log("Cpf: " + store.get('cpf'))
